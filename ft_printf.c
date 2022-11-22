@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_printf.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/11/22 14:39:19 by raanghel      #+#    #+#                 */
+/*   Updated: 2022/11/22 16:28:45 by raanghel      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include"printf.h"
 #include<stdio.h>
-#include<stdarg.h>
 
 int	formats(va_list arg_pointer, char format)
 {
@@ -7,15 +19,16 @@ int	formats(va_list arg_pointer, char format)
 
 	ret = 0;
 	if (format == 'c')
-		ret += 
+		ret += ft_print_char(va_arg(arg_pointer, int));
 	else if (format == 's')
-	else if (format == 'p')
-	else if (format == 'd')
-	else if (format == 'i')
-	else if (format == 'u')
-	else if (format == 'x')
-	else if (format == 'X')
-	else if (format == '%')
+		ret += ft_print_str(va_arg(arg_pointer, char *));
+	// else if (format == 'p')
+	// else if (format == 'd')
+	// else if (format == 'i')
+	// else if (format == 'u')
+	// else if (format == 'x')
+	// else if (format == 'X')
+	// else if (format == '%')
 
 	return (ret);
 }
@@ -34,19 +47,24 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] != '%')
 		{
-			i++;
+			write (1, &str[i], 1);
 			ret++;
 		}
-		else if (str[i] == '%')
+		else
 		{
-			ret += formats ();
+			formats(arg_pointer, str[i]);
+			ret++;
+			i++;
 		}
-			
+		if (str[i] != '\0')
+			i++;
 	}
-
+	va_end(arg_pointer);
 	return (ret);
-	printf("rares: %d", ret);
 
 }
 
-printf("rares: %d", );
+// int	main (void)
+// {
+// 	printf("My name is %s and I love %s !", "Rares", "coding");
+// }
