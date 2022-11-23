@@ -6,7 +6,7 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 14:39:19 by raanghel      #+#    #+#                 */
-/*   Updated: 2022/11/22 16:28:45 by raanghel      ########   odam.nl         */
+/*   Updated: 2022/11/23 10:01:42 by rares         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,8 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			formats(arg_pointer, str[i]);
+			formats(arg_pointer, str[i + 1]);
 			ret++;
-			i++;
 		}
 		if (str[i] != '\0')
 			i++;
