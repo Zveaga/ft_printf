@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_print_d.c                                       :+:    :+:            */
+/*   len_n.c                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: rares <rares@student.codam.nl>               +#+                     */
+/*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/11/23 10:13:43 by rares         #+#    #+#                 */
-/*   Updated: 2022/11/23 10:33:42 by rares         ########   odam.nl         */
+/*   Created: 2022/11/23 17:12:50 by raanghel      #+#    #+#                 */
+/*   Updated: 2022/11/23 17:13:40 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int	ft_print_d(long int n)
+int	len_n(long int n)
 {
-	int	ret;
+	int	len;
 
-	ret = 0;
-	if (n < 0)
+	len = 0;
+	if (n <= 0)
 	{
 		n *= -1;
-		write(1, '-', 1);
-		ret++;
+		len++;
 	}
-	if (n > 0 && n <= 9)
+	while (n > 0)
 	{
-		n += '0';
-		write(1, &n, 1);
-		ret++;
+		n /= 10;
+		len++;
 	}
-	else
-	{
-		ft_print_d(n / 10);
-		ft_print_d(n % 10);
-	}
-	return (ret);
+	return (len);
 }

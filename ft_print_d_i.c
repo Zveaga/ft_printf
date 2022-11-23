@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_print_char_str.c                                :+:    :+:            */
+/*   ft_print_d_i.c                                     :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
+/*   By: rares <rares@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/11/22 13:39:58 by raanghel      #+#    #+#                 */
-/*   Updated: 2022/11/22 16:25:27 by raanghel      ########   odam.nl         */
+/*   Created: 2022/11/23 10:13:43 by rares         #+#    #+#                 */
+/*   Updated: 2022/11/23 17:38:44 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int	ft_print_char(int c)
+int	ft_print_d_i(long int n)
 {
-	write(1, &c, 1);
-	return (1);
-}
+	int	ret;
 
-int	ft_print_str(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
+	ret = len_n(n);
+	if (n < 0)
 	{
-		write(1, &str[i], 1);
-		i++;
+		n *= -1;
+		write(1, "-", 1);
 	}
-	return (i);
+	if (n >= 0 && n <= 9)
+	{
+		n += '0';
+		write(1, &n, 1);
+	}
+	else
+	{
+		ft_print_d_i(n / 10);
+		ft_print_d_i(n % 10);
+	}
+	return (ret);
 }

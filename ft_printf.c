@@ -6,12 +6,11 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 14:39:19 by raanghel      #+#    #+#                 */
-/*   Updated: 2022/11/23 10:01:42 by rares         ########   odam.nl         */
+/*   Updated: 2022/11/23 17:40:49 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
-#include<stdio.h>
 
 int	formats(va_list arg_pointer, char format)
 {
@@ -23,16 +22,16 @@ int	formats(va_list arg_pointer, char format)
 	else if (format == 's')
 		ret += ft_print_str(va_arg(arg_pointer, char *));
 	// else if (format == 'p')
-	// else if (format == 'd')
-	// else if (format == 'i')
-	// else if (format == 'u')
+	else if (format == 'd' || format == 'i')
+		ret += ft_print_d_i(va_arg(arg_pointer, int));
+	else if (format == 'u')
+		ret += ft_print_u(va_arg(arg_pointer, unsigned int));
 	// else if (format == 'x')
 	// else if (format == 'X')
 	// else if (format == '%')
 
 	return (ret);
 }
-
 
 int	ft_printf(const char *str, ...)
 {
@@ -51,19 +50,22 @@ int	ft_printf(const char *str, ...)
 			ret++;
 		}
 		else
-		{
-			formats(arg_pointer, str[i + 1]);
-			ret++;
+		{	
+			i++;
+			ret += formats(arg_pointer, str[i]);
 		}
 		if (str[i] != '\0')
 			i++;
 	}
 	va_end(arg_pointer);
 	return (ret);
-
 }
 
-// int	main (void)
-// {
-// 	printf("My name is %s and I love %s !", "Rares", "coding");
-// }
+int	main (void)
+{
+	ft_printf("Own output:  ");
+	ft_printf("Own ret:  %d \n\n", ft_printf("%s %i %u %d\n", "Baam!", 12, -5, -4333));
+
+	printf("Real output: ");
+	printf("Real ret: %d\n", printf("%s %i %u %d\n", "Baam!", 12, -5, -4333));
+}

@@ -6,7 +6,7 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 13:41:37 by raanghel      #+#    #+#                 */
-/*   Updated: 2022/11/23 10:14:57 by rares         ########   odam.nl         */
+/*   Updated: 2022/11/23 17:20:31 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@
 # include<unistd.h>
 # include<stdio.h> // -> REMOVE!!!!
 
-int		ft_printf(const char *str, ...);
-
 int		ft_print_char(int c);
 
 int		ft_print_str(char *str);
 
+int		ft_print_d_i(long int n);
+
+int		ft_print_u(unsigned int n);
+
+int		len_n(long int n);
 
 #endif
