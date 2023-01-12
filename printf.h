@@ -6,7 +6,7 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 13:41:37 by raanghel      #+#    #+#                 */
-/*   Updated: 2022/11/23 17:20:31 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/12 17:40:54 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		ft_print_d_i(long int n);
 
 int		ft_print_u(unsigned int n);
 
-int		len_n(long int n);
+int		len_n(int n);
+
+int		ft_print_x(long	int	n);
 
 #endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_print_char_str.c                                :+:    :+:            */
+/*   ft_print_ch_str.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 13:39:58 by raanghel      #+#    #+#                 */
-/*   Updated: 2022/11/22 16:25:27 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/12 17:51:37 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ int	ft_print_str(char *str)
 	int	i;
 
 	i = 0;
+	if (str == 0)
+	{
+		write(1, "(null)", 6);
+		i += 6;
+		return (i);
+	}
 	while (str[i])
 	{
 		write(1, &str[i], 1);

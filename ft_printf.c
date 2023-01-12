@@ -6,7 +6,7 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 14:39:19 by raanghel      #+#    #+#                 */
-/*   Updated: 2022/11/23 17:40:49 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/12 17:57:49 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	formats(va_list arg_pointer, char format)
 	else if (format == 'u')
 		ret += ft_print_u(va_arg(arg_pointer, unsigned int));
 	// else if (format == 'x')
-	// else if (format == 'X')
+	else if (format == 'X')
+		ret += ft_print_x(va_arg(arg_pointer, long int));
 	// else if (format == '%')
 
 	return (ret);
@@ -64,8 +65,10 @@ int	ft_printf(const char *str, ...)
 int	main (void)
 {
 	ft_printf("Own output:  ");
-	ft_printf("Own ret:  %d \n\n", ft_printf("%s %i %u %d\n", "Baam!", 12, -5, -4333));
+	ft_printf("Own ret:  %d \n\n", ft_printf("%s %d %u %i\n", "123456", -100, 200, -300));
 
 	printf("Real output: ");
-	printf("Real ret: %d\n", printf("%s %i %u %d\n", "Baam!", 12, -5, -4333));
+	printf("Real ret: %d\n", printf("%s %d %u %i\n", "123456", -100, 200, -300));
 }
+
+// %i %u %d
