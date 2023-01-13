@@ -6,11 +6,29 @@
 /*   By: rares <rares@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 10:13:43 by rares         #+#    #+#                 */
-/*   Updated: 2022/11/23 17:38:44 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/13 14:25:26 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
+
+int	len_n(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+	{
+		n *= -1;
+		len++;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
 
 int	ft_print_d_i(long int n)
 {

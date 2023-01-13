@@ -1,14 +1,12 @@
 NAME = libftprintf.a
 
 SRC = \
-ft_print_%.c \
 ft_print_ch_str.c \
 ft_print_d_i.c \
+ft_print_hex.c \
+ft_print_ptr.c \
 ft_print_u.c \
-ft_print_X_x.c \
 ft_printf.c \
-len_n.c \
-
 
 OBJ_FILES = $(SRC:.c=.o)
 

@@ -1,44 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_print_X_x.c                                     :+:    :+:            */
+/*   ft_print_hex.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/14 14:42:33 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/12 17:39:20 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/13 16:29:03 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int	ft_print_x(long	int	n)
+int	len_hex(int n)
+{
+	int	len;
+
+	len = 0;
+	while (n > 0)
+	{
+		n /= 16;
+		len++;
+	}
+	return (len);
+}
+
+int	ft_print_hex(long int n, char format)
 {
 	char	*dict;
 	int		ret;
-
-	ret = 0;
-	dict = "0123456789ABCDEF";
-
+	
+	ret = len_hex(n);
+	if (format == 'X')
+		dict = "0123456789ABCDEF";
+	else
+		dict = "0123456789abcdef";
 	if (n < 0)
 	{
-		ret += ft_print_char('-');
+		ft_print_char('-');
 		n *= -1;
 	}
 	if (n >= 0 && n <= 16)
-		ret += ft_print_char(dict[n]);
+		ft_print_char(dict[n]);
 	else
 	{
-		ft_print_x(n / 16);
-		ft_print_x(n % 16);
+		ft_print_hex((n / 16), format);
+		ft_print_hex((n % 16), format);
 	}
 	return (ret);
 }
 
 // int	main(void)
 // {
-// 	ft_print_x(-21474836483);
-// 	//printf ("%d\n", ft_print_x(421));
+// 	printf("|%d", ft_print_hex(5151511));
+// 	//printf ("%d\n", ft_print_hex(421));
 // }
 
 // int	ft_print_x(long int	n)

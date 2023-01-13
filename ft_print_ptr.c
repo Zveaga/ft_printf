@@ -1,31 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   len_n.c                                            :+:    :+:            */
+/*   ft_print_ptr.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/11/23 17:12:50 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/12 17:40:46 by raanghel      ########   odam.nl         */
+/*   Created: 2023/01/13 14:24:04 by raanghel      #+#    #+#                 */
+/*   Updated: 2023/01/13 16:59:07 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int	len_n(int n)
+int	len_ptr(uintptr_t n)
 {
 	int	len;
 
 	len = 0;
-	if (n <= 0)
-	{
-		n *= -1;
-		len++;
-	}
 	while (n > 0)
 	{
-		n /= 10;
+		n /= 16;
 		len++;
 	}
 	return (len);
+}
+
+int	ft_print_ptr(long int n)
+{
+	char	*dict;
+	int		ret;
+	
+	ret = len_ptr(n);
+	dict = "0123456789abcdef";
+	if (n < 0)
+	{
+		ft_print_char('-');
+		n *= -1;
+	}
+	if (n >= 0 && n <= 16)
+		ft_print_char(dict[n]);
+	else
+	{
+		ft_print_ptr(n / 16);
+		ft_print_ptr(n % 16);
+	}
+	return (ret);
 }
