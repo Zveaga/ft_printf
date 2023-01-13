@@ -6,13 +6,13 @@
 /*   By: rares <rares@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 10:13:43 by rares         #+#    #+#                 */
-/*   Updated: 2023/01/13 14:25:26 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/13 20:48:44 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int	len_n(int n)
+int	len_n(long int n)
 {
 	int	len;
 

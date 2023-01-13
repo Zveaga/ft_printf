@@ -6,7 +6,7 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 14:39:19 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/13 17:12:13 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/13 20:51:43 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	formats(va_list arg_pointer, char format)
 	else if (format == 'p')
 	{
 		ret += write(1, "0x", 2);
-		ret += ft_print_ptr((va_arg(arg_pointer, long int)));
+		ret += ft_print_ptr((va_arg(arg_pointer, unsigned long)));
 	}
 	return (ret);
 }
@@ -67,8 +67,8 @@ int	ft_printf(const char *str, ...)
 
 int	main (void)
 {
-	char	a = 10;
-	char	*p = &a;
+	// char	a = 10;
+	// char	*p = &a;
 	// ft_printf("Own output:  ");
 	// ft_printf("Own ret:  %d \n\n", ft_printf("%s %d %u %i %X %x %p\n", "123456", -100, 200, -300, 24245, 24245, p));
 
@@ -82,8 +82,26 @@ int	main (void)
 	// printf("Real ret: %d\n\n", printf("%p\n", p));
 
 	ft_printf("Own output:  ");
-	ft_printf("Own ret:  %d \n\n", ft_printf("%s %X %x %p %%\n", NULL, 24245, 24245, p));
+	ft_printf("Own ret:  %d \n\n", ft_printf("%d\n", -200000));
 
 	printf("Real output: ");
-	printf("Real ret: %d\n", printf("%s %X %x %p %%\n", NULL, 24245, 24245, p));
+	printf("Real ret: %d\n", printf("%d\n", -200000));
 }
+
+// int	main (void)
+// {
+// 	// char	a = 10;
+// 	// char	*p = &a;
+// 	// ft_printf("Own output:  ");
+// 	// ft_printf("Own ret:  %d \n\n", ft_printf("%s %d %u %i %X %x %p\n", "123456", -100, 200, -300, 24245, 24245, p));
+
+// 	// printf("Real output: ");
+// 	// printf("Real ret: %d\n", printf("%s %d %u %i %X %x %p\n", "123456", -100, 200, -300, 24245, 24245, p));
+
+// 	// ft_printf("Own output:  ");
+// 	// ft_printf("Own ret:  %d \n\n", ft_printf("%p\n", p));
+
+// 	// printf("Real output: ");
+// 	// printf("Real ret: %d\n\n", printf("%p\n", p));
+
+// }
