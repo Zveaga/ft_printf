@@ -20,7 +20,7 @@ $(NAME): $(OBJ_FILES)
 	ar rcs $(NAME) $(OBJ_FILES)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $^
+	$(CC) -c -o $@ $^
 
 clean:
 	rm -f $(OBJ_FILES)
@@ -28,6 +28,6 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re:	fclean all
+re: fclean all
 
 .PHONY: clean re fclean all

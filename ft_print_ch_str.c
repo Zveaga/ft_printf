@@ -6,11 +6,11 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 13:39:58 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/17 13:31:47 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/17 18:19:45 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
 int	ft_print_char(int c)
 {

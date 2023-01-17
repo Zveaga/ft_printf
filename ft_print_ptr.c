@@ -6,11 +6,11 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/13 14:24:04 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/17 13:31:40 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/17 18:19:39 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
 int	len_ptr(unsigned long n)
 {

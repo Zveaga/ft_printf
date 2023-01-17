@@ -6,11 +6,11 @@
 /*   By: rares <rares@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/23 10:13:43 by rares         #+#    #+#                 */
-/*   Updated: 2023/01/17 13:31:45 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/17 18:19:43 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
 int	len_n(long int n)
 {

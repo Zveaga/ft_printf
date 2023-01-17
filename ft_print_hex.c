@@ -6,13 +6,13 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/14 14:42:33 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/17 13:31:43 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/17 18:55:46 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"printf.h"
+#include"ft_printf.h"
 
-int	len_hex(long int n)
+int	len_hex(unsigned int n)
 {
 	int	len;
 
@@ -25,7 +25,7 @@ int	len_hex(long int n)
 	return (len);
 }
 
-int	ft_print_hex(long int n, char format)
+int	ft_print_hex(unsigned int n, char format)
 {
 	char	*dict;
 	int		ret;
@@ -33,13 +33,13 @@ int	ft_print_hex(long int n, char format)
 	ret = len_hex(n);
 	if (n == 0)
 		ret += 1;
-	if (n < 0)
-		n *= -1;
+	// if (n < 0)
+	// 	n *= -1;
 	if (format == 'X')
 		dict = "0123456789ABCDEF";
 	else
 		dict = "0123456789abcdef";
-	if (n >= 0 && n <= 16)
+	if (n >= 0 && n < 16)
 		ft_print_char(dict[n]);
 	else
 	{
