@@ -6,13 +6,13 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/14 14:42:33 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/13 18:24:47 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/17 13:31:43 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"printf.h"
 
-int	len_hex(int n)
+int	len_hex(long int n)
 {
 	int	len;
 
@@ -31,6 +31,10 @@ int	ft_print_hex(long int n, char format)
 	int		ret;
 	
 	ret = len_hex(n);
+	if (n == 0)
+		ret += 1;
+	if (n < 0)
+		n *= -1;
 	if (format == 'X')
 		dict = "0123456789ABCDEF";
 	else
@@ -44,6 +48,11 @@ int	ft_print_hex(long int n, char format)
 	}
 	return (ret);
 }
+
+
+
+
+
 
 // int	main(void)
 // {

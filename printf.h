@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   printf.h                                           :+:    :+:            */
+/*   ft_printf.h                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 13:41:37 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/13 20:47:54 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/17 13:31:30 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int		ft_print_ptr(unsigned long n);
 
 int		len_n(long int n);
 
-int		len_hex(int n);
+int		len_hex(long int n);
 
 #endif
