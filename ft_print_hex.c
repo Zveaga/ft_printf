@@ -6,7 +6,7 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/14 14:42:33 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/17 18:55:46 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/19 12:07:40 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,10 @@ int	ft_print_hex(unsigned int n, char format)
 {
 	char	*dict;
 	int		ret;
-	
+
 	ret = len_hex(n);
 	if (n == 0)
 		ret += 1;
-	// if (n < 0)
-	// 	n *= -1;
 	if (format == 'X')
 		dict = "0123456789ABCDEF";
 	else
@@ -48,11 +46,6 @@ int	ft_print_hex(unsigned int n, char format)
 	}
 	return (ret);
 }
-
-
-
-
-
 
 // int	main(void)
 // {

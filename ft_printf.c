@@ -6,12 +6,11 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 14:39:19 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/17 18:56:37 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/19 12:31:36 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
-#include<limits.h>
 
 int	formats(va_list arg_pointer, char format)
 {
@@ -63,12 +62,15 @@ int	ft_printf(const char *str, ...)
 	return (ret);
 }
 
-// int	main (void)
+// int	main(void)
 // {
-// 	// char	a = 10;
-// 	// char	*p = &a;
-// 	ft_printf("%d", ft_printf("%x", LONG_MAX));
-// 	printf("\n");
-// 	printf("%d", printf("%x", __LONG_LONG_MAX__));
-// }
+// 	char	a = 10;
+// 	char	*p = &a;
+// 	ft_printf("Own output:  ");
+// 	ft_printf("Own ret:  %d \n\n", ft_printf("%s %d %u %i %X %x %p\n",
+// 			"123456", -100, 200, -300, 24245, 24245, p));
 
+// 	printf("Real output: ");
+// 	printf("Real ret: %d\n", printf("%s %d %u %i %X %x %p\n",
+// 			"123456", -100, 200, -300, 24245, 24245, p));
+// }
