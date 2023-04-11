@@ -20,7 +20,7 @@ $(NAME): $(OBJ_FILES)
 	ar rcs $(NAME) $(OBJ_FILES)
 
 %.o: %.c
-	$(CC) -c -o $@ $^
+	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:
 	rm -f $(OBJ_FILES)

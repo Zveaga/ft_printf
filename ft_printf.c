@@ -6,7 +6,7 @@
 /*   By: raanghel <raanghel@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/22 14:39:19 by raanghel      #+#    #+#                 */
-/*   Updated: 2023/01/19 12:36:07 by raanghel      ########   odam.nl         */
+/*   Updated: 2023/01/19 16:22:16 by raanghel      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int	formats(va_list arg_pointer, char format)
 		ret += write(1, "0x", 2);
 		ret += ft_print_ptr((va_arg(arg_pointer, unsigned long)));
 	}
+	else if (format != '\0')
+		ret += write(1, &format, 1);
 	return (ret);
 }
 
@@ -73,4 +75,11 @@ int	ft_printf(const char *str, ...)
 // 	printf("Real output: ");
 // 	printf("Real ret: %d\n", printf("%s %d %u %i %X %x %p\n",
 // 			"123456", -100, 200, -300, 24245, 24245, p));
+
+// 	// char	*str = "hello world";
+// 	// int		str_len = printf("%s, %TEST%", str);
+// 	// int		my_strlen = ft_printf("%s, %TEST%", str);
+
+// 	// ft_printf("%i\n", my_strlen);
+// 	// printf("%i\n", str_len);
 // }
