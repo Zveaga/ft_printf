@@ -20,11 +20,10 @@ Compile all files into a single static library named "libftprintf.a" which can b
 ```
 make
 ```
-
+	
 
 ## The function
-Ft_printf takes a string as its first argument ('const char *s'), after which it can take a variable number of arguments ('...') and displays the formatted string to the standatd output.
-The string to be formatted contains plain text and format specifiers.
+Printf is a variadic function that takes a string as its first argument ('const char *s'). After the string, it takes a variable number of arguments ('...') and displays the formatted string to the standatd output. The string to be formatted contains plain text and format specifiers.
 
 Function prototype: ft_printf(const char *s, ...);
 
@@ -33,12 +32,19 @@ Function prototype: ft_printf(const char *s, ...);
 
 
 ## Approach
-1. Parse the input string 's'  
+
+1. Parse the input string 's'
 2. Identify format specifiers ('%') and their associated values to be formatted ('...')
-3. Format the value according to their format specifiers
+3. Format the values according to their format specifiers
 4. Replace the format specifiers with their formatted values
-5. Write the string to the standard output 
+5. Write the new string to the standard output
+
+
+
+
 
 
 
   
+
+
