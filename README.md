@@ -56,7 +56,7 @@ To be able to recode printf, we need to first understand how to work with variab
 4. `va_arg` retrieves the value of the the next variable argument. We use this function to advance to the next argument.
 5. `va_end` cleans up the data associated with va_list. We call this at the end after all arguments have been processed.
 
-Thus, when a format specifier is encountered in the string 's', we send it along with the `arg_pointer` to the [formats](https://github.com/Zveaga/Printf/blob/main/ft_printf.c) function. This function selects a formatting mechanism based on the format specifier, after which we use `va_arg` to move to the next varable argument. We do this until string 's' has been fully parsed and all the variable arguments processed.
+Thus, when a format specifier is encountered in the string 's', we send it along with the `arg_pointer` to the [formats](https://github.com/Zveaga/Printf/blob/main/ft_printf.c) function. This function selects a formatting mechanism based on the format specifier. We use `va_arg` to retrieve the current argument, after which it will point to the next varable argument. We do this until string 's' has been fully parsed and all the variable arguments processed.
 
 
 ## Remarks
