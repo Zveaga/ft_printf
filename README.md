@@ -51,13 +51,12 @@ Our version of printf must be able to format the following specifiers:
 5. Write the new string to the standard output
 
 To be able to recode printf, we need to first understand how to work with variable arguments. We'll use the 'stdarg.h' library that comes with C. This library conains four macros that we are going to use: `va_list`, `va_start`, `va_arg`, `va_end`.
-1. `va_list` holds information about the variable argument list. It is a pointer type. We initialize this at the begining.
-2. `va_start` initializes the `va_list` to point to the first variable argument. We call this after initializing the `va_list` pointer.
-4. `va_arg` retrieves the value of the the next variable argument. We use this function to advance to the next argument.
-5. `va_end` cleans up the data associated with va_list. We call this at the end after all arguments have been processed.
+1. `va_list` holds information about the variable argument list. It is a pointer type. We initialize this at the begining and set its name to be `arg_pointer`.
+2. `va_start` initializes the `arg_pointer` to point to the first variable argument.
+4. `va_arg` retrieves the value of the the next variable argument.
+5. `va_end` cleans up the data associated with va_list.
 
-Thus, when a format specifier is encountered in the string 's', we send it along with the `arg_pointer` to the [formats](https://github.com/Zveaga/Printf/blob/main/ft_printf.c) function. This function selects a formatting mechanism based on the format specifier. We use `va_arg` to retrieve the current argument and point to the next argument. We do this until string 's' has been fully parsed and all the variable arguments processed.
-
+To sum up the process, when a format specifier is encountered in string 's', it is sent along with the `arg_pointer` to the [formats](https://github.com/Zveaga/Printf/blob/main/ft_printf.c) function. This function selects a formatting mechanism based on the format specifier. We then use `va_arg` to retrieve the current argument value and point to the next argument. We do this until string 's' has been fully parsed and all the variable arguments processed. Finally, va_end gets called to clean up the data that va_list is pointing to.
 
 ## Remarks
 
