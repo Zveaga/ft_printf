@@ -41,11 +41,11 @@ Function prototype: ft_printf (const char *s, ...);
 
 To be able to recode printf, we need to first understand how to work variable arguments. We'll use the 'stdarg.h' library that comes with C. This library conains four macros that we are going to use: `va_list`, `va_start`, `va_arg`, `va_end`.
 1. `va_list` holds information about the variable argument list. It is a pointer type. We initialize this at the begining.
-2. `va_start` initializes the va_list to point to the first variable argument. After we declare the va_list, va_start is called with its two arguments, the string 's' and the va_list which is named 'arg_pointer'.
-va_start(arg_pointer, str);
+2. `va_start` initializes the `va_list` to point to the first variable argument. We call this after initializing the `va_list` pointer.
 4. `va_arg` retrieves the value of the the next variable argument. We use this function to advance to the next argument.
-5. `va_end` cleans up the data associated with va_list. We call this after all the arguments have been processed. 
+5. `va_end` cleans up the data associated with va_list. We call this at the end after all arguments have been processed.
 
+When a format specifier is encountered in the string 's', we send it along with the `arg_pointer` to the `formats` function. This function selects a formatting mechanism based on the format specifier, after which we use `va_arg` to move to the next varable argument. We do this until string 's' has been fully parsed and all the variable arguments processed.
 
 
 
