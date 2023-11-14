@@ -1,5 +1,5 @@
 # Printf
-The goal of this project is to recode a simplified version of the 'printf' function in C.
+The goal of this project is to recode a simplified version of the `printf` function in C.
 
 ## Key Concepts
 - Variadic functions
