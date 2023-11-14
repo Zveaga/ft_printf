@@ -14,7 +14,6 @@ git clone git@github.com:Zveaga/Printf.git
 Move inside the Libft directory
 ```
 cd Printf
-
 ```
 Compile all files into a single static library named "libftprintf.a" which can be linked to other C projects.
 ```
