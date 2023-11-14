@@ -25,7 +25,7 @@ make
 ## The function
 Printf is a variadic function that takes a string as its first argument ('const char *s'). After the string, it takes a variable number of arguments ('...') and displays the formatted string to the standatd output. The string to be formatted contains plain text and format specifiers.
 
-Function prototype: ft_printf(const char *s, ...);
+Function prototype: ft_printf (const char *s, ...);
 
 - Format specifiers are simple placeholders that indicate the type and format of the data that will be substituted in their place.
 - The variable arguments denoted by three consecutive dots ('...') represent the values to be formated based on their associated format specifiers.
