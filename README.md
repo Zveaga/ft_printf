@@ -34,7 +34,7 @@ Our version of printf must be able to format the following specifiers:
 
 - %c -> print a single character
 - %s -> print a string (as defined by the common C convention)
-- %p -> print the address in hexadecimal format (lower case)
+- %p -> print the void *p address in hexadecimal format (lower case)
 - %d -> print a decimal (base 10) number
 - %i -> print an integer in base 10
 - %u -> print an unsigned decimal (base 10) number
