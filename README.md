@@ -20,7 +20,7 @@ Compile all files into a single static library named "libftprintf.a" which can b
 ```
 make
 ```
-	
+
 
 ## The function
 Printf is a variadic function that takes a string as its first argument ('const char *s'). After the string, it takes a variable number of arguments ('...') and displays the formatted string to the standatd output. The string to be formatted contains plain text and format specifiers.
@@ -39,12 +39,16 @@ Function prototype: ft_printf (const char *s, ...);
 4. Replace the format specifiers with their formatted values
 5. Write the new string to the standard output
 
+To be able to recode printf, we need to first understand how to work variable arguments. We'll use the 'stdarg.h' library that comes with C. This library conains four macros that we are going to use:
+- va_list
+- va_start
+- va_arg
+- va_end
 
 
 
 
 
 
-  
 
 
