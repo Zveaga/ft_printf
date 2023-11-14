@@ -33,9 +33,12 @@ Function prototype: ft_printf(const char *s, ...);
 
 
 ## Approach
-1. Parse the input string 's'
-2. Identify format specifiers
-3. Replace the format specifiers with the 
+1. Parse the input string 's'  
+2. Identify format specifiers ('%') and their associated values to be formatted ('...')
+3. Format the value according to their format specifiers
+4. Replace the format specifiers with their formatted values
+5. Write the string to the standard output 
+
 
 
   
