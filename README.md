@@ -15,10 +15,11 @@ Move inside the Libft directory
 ```
 cd Printf
 ```
-Compile all files into a single static library named "libftprintf.a" which can be linked to other C projects.
+Compile all files into a single static library named "libftprintf.a".
 ```
 make
 ```
+To use the `ft_printf` function, link the static library to your C project.
 
 ## The function
 
@@ -56,8 +57,6 @@ To be able to recode printf, we need to first understand how to work with variab
 5. `va_end` cleans up the data associated with va_list.
 
 To sum up the process, we loop through string 's' character by character. If the character is not a format specifier, it gets written to the console as it is. If the character is a format specifier, it is sent along with the `arg_pointer` to the [formats](https://github.com/Zveaga/Printf/blob/main/ft_printf.c) function. This function selects a formatting mechanism based on the format specifier. Then, `va_arg` retrieves the current argument value and sends it to the formatting function. `va_arg` will then point to the next argument. We do this until string 's' has been fully parsed and all the variable arguments processed. Finally, va_end gets called to clean up the data that va_list is pointing to.
-
-## Remarks
 
 
 
