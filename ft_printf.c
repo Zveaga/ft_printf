@@ -63,23 +63,3 @@ int	ft_printf(const char *str, ...)
 	va_end(arg_pointer);
 	return (ret);
 }
-
-// int	main(void)
-// {
-// 	char	a = 10;
-// 	char	*p = &a;
-// 	ft_printf("Own output:  ");
-// 	ft_printf("Own ret:  %d \n\n", ft_printf("%s %d %u %i %X %x %p\n",
-// 			"123456", -100, 200, -300, 24245, 24245, p));
-
-// 	printf("Real output: ");
-// 	printf("Real ret: %d\n", printf("%s %d %u %i %X %x %p\n",
-// 			"123456", -100, 200, -300, 24245, 24245, p));
-
-// 	// char	*str = "hello world";
-// 	// int		str_len = printf("%s, %TEST%", str);
-// 	// int		my_strlen = ft_printf("%s, %TEST%", str);
-
-// 	// ft_printf("%i\n", my_strlen);
-// 	// printf("%i\n", str_len);
-// }
